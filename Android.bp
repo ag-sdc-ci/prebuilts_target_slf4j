@@ -1,0 +1,42 @@
+// Auto-generated prebuilt Blueprint for prebuilts_target_slf4j
+// Staged from Extractive APEX package: ext-slf4j (org.blisslabs.ag.ext.slf4j)
+
+package {
+    default_applicable_licenses: ["external_slf4j_license"],
+}
+
+license {
+    name: "external_slf4j_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-Apache-2.0",
+        "SPDX-license-identifier-GPL",
+        "SPDX-license-identifier-LGPL",
+        "SPDX-license-identifier-MIT",
+    ],
+    license_text: [
+        "LICENSE.txt",
+        "NOTICE",
+    ],
+}
+
+java_import {
+    name: "slf4j-jdk14",
+    jars: ["share/slf4j/slf4j-jdk14.jar"],
+    host_supported: true,
+    sdk_version: "core_current",
+    apex_available: [
+        "com.android.ondevicepersonalization",
+        "//apex_available:platform",
+    ],
+}
+
+java_import_host {
+    name: "slf4j-nop",
+    jars: ["share/slf4j/slf4j-nop.jar"],
+}
+
+java_import_host {
+    name: "slf4j-api",
+    jars: ["share/slf4j/slf4j-api.jar"],
+}
